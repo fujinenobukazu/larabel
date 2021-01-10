@@ -2,8 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController; //これがないとコントローラーを探してくれない
+use App\Http\Controllers\FolderController; //これがないとコントローラーを探してくれない
+
 
 Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])->name('tasks.index');
+
+Route::get('/folders/create', [FolderController::class, 'showCreateForm'])->name('folders.create');
+
+Route::post('/folders/create', [FolderController::class, 'create']);
 
 // Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
 /*
