@@ -12,6 +12,9 @@ Route::post('/folders/create', [FolderController::class, 'create']);
 // タスク作成機能
 Route::get('/folders/{id}/tasks/create', [TaskController::class, 'showCreateForm'])->name('tasks.create');
 Route::post('/folders/{id}/tasks/create', [TaskController::class, 'create']);
+// タスク編集機能
+Route::get('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, 'showEditForm'])->name('tasks.edit');
+Route::post('/folders/{id}/tasks/{task_id}/edit', [TaskController::class, 'edit']);
 
 // Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
 /*
